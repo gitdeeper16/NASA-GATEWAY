@@ -287,7 +287,13 @@ Ronin Institute / Rite of Renaissance
 | Email | [gitdeeper@gmail.com](mailto:gitdeeper@gmail.com) |
 | ORCID | [0009-0003-8903-0029](https://orcid.org/0009-0003-8903-0029) |
 | Website | [nasa-gateway.netlify.app](https://nasa-gateway.netlify.app) |
+| Zenodo | [10.5281/zenodo.24559255](https://doi.org/10.5281/zenodo.24559255) |
+| Figshare | [10.6084/m9.figshare.35136991](https://doi.org/10.6084/m9.figshare.35136991) |
 | GitHub | [gitdeeper16/NASA-GATEWAY](https://github.com/gitdeeper16/NASA-GATEWAY) |
+| GitLab | [gitdeeper16/NASA-GATEWAY](https://gitlab.com/gitdeeper16/NASA-GATEWAY) |
+| Gitea | [gitdeeper16/NASA-GATEWAY](https://gitea.com/gitdeeper16/NASA-GATEWAY) |
+| Codeberg | [gitdeeper16/NASA-GATEWAY](https://codeberg.org/gitdeeper16/NASA-GATEWAY) |
+| Bitbucket | [gitdeeper16/NASA-GATEWAY](https://bitbucket.org/gitdeeper16/NASA-GATEWAY) |
 
 ## License
 
