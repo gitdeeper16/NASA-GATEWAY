@@ -1,0 +1,85 @@
+==============================================================================
+NASA GATEWAY — SAFETY ASSURANCE & FORMAL VERIFICATION
+A Traceability Gap in Public Documentation
+Version 1.0.0 — 2026-11-26
+==============================================================================
+
+AUTHOR
+------
+Samir Baladi
+Ronin Institute / Rite of Renaissance
+Email:  gitdeeper@gmail.com
+ORCID:  0009-0003-8903-0029
+
+IDENTIFIERS
+-----------
+Zenodo DOI:     10.5281/zenodo.24559255
+                https://doi.org/10.5281/zenodo.24559255
+Figshare DOI:   10.6084/m9.figshare.35136991
+                https://doi.org/10.6084/m9.figshare.35136991
+GitHub:         https://github.com/gitdeeper16/NASA-GATEWAY
+Website:        https://nasa-gateway.netlify.app
+License:        CC-BY-4.0
+
+CENTRAL QUESTION
+----------------
+How are safety-derived boundaries of local autonomy translated into formally
+verifiable decision and escalation rules at the interface between Module
+System Managers (MSMs) and the Vehicle System Manager (VSM) in NASA Gateway?
+
+CENTRAL FINDING
+---------------
+NASA Gateway publicly documents the existence of safety-derived autonomous
+operation requirements, distributed control responsibilities, formal
+contract-based verification, and runtime verification. However, the reviewed
+public documentation does not establish a complete traceability chain
+connecting hazard-derived autonomy boundaries to specific MSM decision and
+escalation rules and their corresponding verification properties.
+
+SCOPE CAVEAT
+------------
+The finding concerns public documentation only. It makes no claim about
+the absence of mechanisms in implementation.
+
+DELIVERABLES
+------------
+- Manuscript:          ~6,829 words (Markdown + PDF)
+- Figures:             6 PNG (Fig1 … Fig6)
+- Analytical data:     3 CSV files
+  * traceability_matrix.csv        (8 steps)
+  * evidence_classification.csv    (11 documents)
+  * requirement_to_property.csv    (8 requirements)
+- Documentation:       methodology_notes.md, figure_provenance.md
+- Scripts:             validate.py, build_pdf.sh, build_latex.sh
+- Tests:               49/49 passing
+
+KEY SOURCES
+-----------
+S1 NASA DSG-RQMT-001 (2019)             Gateway System Requirements
+S2 NASA GLS-RQMT-001                    Logistics Services Requirements
+S3 NASA GLS-006 (2019)                  Safety Data Package
+P1 When the Eyes Don't Have It (2020)   Locus of control / control authority
+P2 Using AGCs for Operational Verif.    Formal verification pathway
+P3 Gateway at the Crossroads (2023)     Distributed fault management
+P4 Trustworthy Autonomy for VSM (2023)  Domain of Control
+P5 MAST (2019)                          Distributed fault management
+P6 Gateway Risk-Reduction (2022)        MSM–VSM scenarios
+P7 Refueling Systems (2024)             Ground authorization + autonomy
+P8 Stochastic Timeline Validation (26)  R2U2 + AGC integration
+
+WHAT THIS PROJECT DOES NOT CLAIM
+--------------------------------
+- That NASA lacks a traceability mechanism in implementation.
+- That Gateway autonomy is unsafe or deficient.
+- That the public documentation gap implies implementation failure.
+- Any causal claim beyond the executed documentary analysis.
+- A complete inventory of all internal NASA artifacts.
+
+PHASE STATUS
+------------
+Phase I (Documentary Analysis): COMPLETE — v1.0.0
+Phase II (Simulation / executable artifacts): NOT STARTED — out of scope
+
+==============================================================================
+© 2026 Samir Baladi · Ronin Institute / Rite of Renaissance
+==============================================================================

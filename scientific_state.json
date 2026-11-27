@@ -1,0 +1,62 @@
+{
+  "project": "NASA Gateway — Safety Assurance and Formal Verification",
+  "version": "1.0.0",
+  "date": "2026-11-26",
+  "phase": "Phase I — Documentary Analysis",
+  "status": "complete",
+  "author": {
+    "name": "Samir Baladi",
+    "affiliation": "Ronin Institute / Rite of Renaissance",
+    "email": "gitdeeper@gmail.com",
+    "orcid": "0009-0003-8903-0029"
+  },
+  "identifiers": {
+    "zenodo_doi": "10.5281/zenodo.24559255",
+    "figshare_doi": "10.6084/m9.figshare.35136991",
+    "github": "https://github.com/gitdeeper16/NASA-GATEWAY",
+    "website": "https://nasa-gateway.netlify.app"
+  },
+  "central_question": "How are safety-derived boundaries of local autonomy translated into formally verifiable decision and escalation rules at the interface between Module System Managers (MSMs) and the Vehicle System Manager (VSM) in NASA Gateway?",
+  "central_finding": "The reviewed public documentation does not establish a complete traceability chain connecting hazard-derived autonomy boundaries to specific MSM decision and escalation rules and their corresponding verification properties.",
+  "scope_caveat": "Finding concerns public documentation only. No claim about implementation status.",
+  "manuscript": {
+    "path": "paper/NASA_Gateway_Safety_Assurance_and_Formal_Verification.md",
+    "pdf": "paper/NASA_Gateway_Traceability_Gap_Research_Paper_v1.0.0.pdf",
+    "words": 6829,
+    "figures": 6,
+    "sections": 11
+  },
+  "artifacts": {
+    "traceability_matrix": "data/traceability_matrix.csv",
+    "evidence_classification": "data/evidence_classification.csv",
+    "requirement_to_property": "data/requirement_to_property.csv"
+  },
+  "tests": {
+    "total": 49,
+    "passing": 49,
+    "files": [
+      "tests/test_structure.sh",
+      "tests/test_metadata.sh",
+      "tests/test_data.sh",
+      "tests/test_figures.sh",
+      "tests/test_content.sh"
+    ]
+  },
+  "sources": [
+    "S1 NASA DSG-RQMT-001 (2019)",
+    "S2 NASA GLS-RQMT-001",
+    "S3 NASA GLS-006 (2019)",
+    "P1 When the Eyes Don't Have It (2020)",
+    "P2 Using AGCs for Operational Verification (2023)",
+    "P3 Gateway at the Crossroads (2023)",
+    "P4 Trustworthy Autonomy for VSM (2023)",
+    "P5 MAST (2019)",
+    "P6 Gateway Risk-Reduction (2022)",
+    "P7 Refueling Systems (2024)",
+    "P8 Stochastic Timeline Validation (2026)"
+  ],
+  "phase2_experimental": {
+    "status": "not_started",
+    "note": "Phase II (simulation, executable artifacts) is out of scope for v1.0.0."
+  }
+}

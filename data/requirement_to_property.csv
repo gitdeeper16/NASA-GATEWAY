@@ -1,0 +1,9 @@
+requirement_id,requirement_text_short,expected_formal_property,msm_rule_mapping_status
+L2-GW-0199,Autonomous operation independent of Earth communication,□(loss_of_comm → autonomous_hazard_control_active),Not established in public docs
+L3-GLS-2001,Control of critical hazards through module or Gateway,□(critical_hazard → controlled_by_module_or_gateway),Not established in public docs
+L3-GLS-2004,Autonomous operation when loss could lead to catastrophic event,□(catastrophic_loss_possible → autonomous_operation),Not established in public docs
+L3-GLS-2052,Crew override of automatic control,◇(crew_override → ¬automatic_control),Not established in public docs
+L3-GLS-2071,Reject out-of-sequence hazardous commands,□(hazardous_cmd ∧ out_of_sequence → rejected),Not established in public docs
+L3-GLS-2075,Verify prerequisite conditions before hazardous commands,□(hazardous_cmd → prerequisites_verified),Not established in public docs
+L3-GLS-2081,Automatic detection and safing within hazard-effect timeframe,□(hazard_detected → ◇≤t_hazard_safed),Not established in public docs
+L3-GLS-2131,Fault detection isolation and recovery,□(fault → ◇(detected ∧ isolated ∧ recovered)),Not established in public docs

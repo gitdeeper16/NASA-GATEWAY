@@ -1,0 +1,61 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The Interface Between Safety Assurance and Formal Verification in NASA Gateway Autonomous Systems: A Traceability Gap in Public Documentation"
+version: "1.0.0"
+doi: "10.5281/zenodo.24559255"
+date-released: "2026-11-26"
+license: CC-BY-4.0
+type: generic
+url: "https://nasa-gateway.netlify.app"
+repository-code: "https://github.com/gitdeeper16/NASA-GATEWAY"
+abstract: >-
+  A documentary analysis examining whether safety-derived boundaries of local
+  autonomy can be traced to formally verifiable decision and escalation rules
+  at the interface between Module System Managers (MSMs) and the Vehicle System
+  Manager (VSM) in NASA Gateway. The reviewed public documentation does not
+  establish a complete traceability chain from hazard-derived autonomy
+  boundaries to specific MSM decision and escalation rules and their
+  corresponding verification properties. The finding concerns public
+  documentation only and makes no claim about implementation.
+keywords:
+  - NASA Gateway
+  - autonomous systems
+  - safety assurance
+  - formal verification
+  - Vehicle System Manager
+  - Module System Manager
+  - fault management
+  - assume-guarantee contracts
+  - runtime verification
+  - control authority
+  - traceability
+authors:
+  - family-names: Baladi
+    given-names: Samir
+    orcid: "https://orcid.org/0009-0003-8903-0029"
+    email: gitdeeper@gmail.com
+    affiliation: "Ronin Institute / Rite of Renaissance"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24559255
+    description: "Zenodo archival record (primary citation)"
+  - type: doi
+    value: 10.6084/m9.figshare.35136991
+    description: "Figshare dataset record (full file bundle)"
+  - type: url
+    value: "https://github.com/gitdeeper16/NASA-GATEWAY"
+    description: "GitHub repository (source files, scripts, tests)"
+  - type: url
+    value: "https://nasa-gateway.netlify.app"
+    description: "Project website"
+preferred-citation:
+  type: generic
+  title: "The Interface Between Safety Assurance and Formal Verification in NASA Gateway Autonomous Systems: A Traceability Gap in Public Documentation"
+  year: 2026
+  doi: "10.5281/zenodo.24559255"
+  url: "https://doi.org/10.5281/zenodo.24559255"
+  authors:
+    - family-names: Baladi
+      given-names: Samir
+      orcid: "https://orcid.org/0009-0003-8903-0029"
+      affiliation: "Ronin Institute / Rite of Renaissance"

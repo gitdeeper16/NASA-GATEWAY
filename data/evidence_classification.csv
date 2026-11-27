@@ -1,0 +1,12 @@
+document,evidence_type,contribution,limitation
+DSG-RQMT-001,Requirement,Establishes autonomous operation obligation for catastrophic hazard control,Does not specify MSM decision rules
+GLS-RQMT-001,Requirement,Module-level safety and autonomy obligations,Applies to Logistics Module only
+GLS-006 (2019),Requirement,Documents expected safety evidence structure,Does not provide mapping to MSM rules
+When the Eyes Don't Have It (2020),Architectural,Distinguishes locus of control from control authority,Does not establish current MSM-VSM rules
+AGC paper (2023),Formal Specification,Describes Assume-Guarantee Contract structure for MSM interface,Published examples not exhaustive
+Crossroads paper (2023),Architectural,Describes distributed fault management,Descriptive; not implementation evidence
+Trustworthy Autonomy (2023),Architectural,Introduces Domain of Control concept,Does not specify operational decision function
+MAST (2019),Experimental,Examples of local recovery + VSM coordination,Research prototype; not operational Gateway
+Risk-Reduction (2022),Experimental,Scenarios of MSM-VSM information exchange,Risk-reduction context only
+Refueling paper (2024),Operational,Ground authorization + autonomous execution flow,Does not resolve every local decision rule
+Stochastic Timeline (2026),Verification,Timeline validation via R2U2 with auto-generated AGCs,No example of MSM-VSM authority handoff

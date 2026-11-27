@@ -1,0 +1,85 @@
+{
+  "name": "NASA-GATEWAY",
+  "title": "NASA Gateway — Safety Assurance & Formal Verification",
+  "subtitle": "A Traceability Gap in Public Documentation",
+  "version": "1.0.0",
+  "date": "2026-11-26",
+  "phase": "Phase I — Documentary Analysis",
+  "status": "complete",
+  "license": "CC-BY-4.0",
+  "author": {
+    "name": "Samir Baladi",
+    "affiliation": "Ronin Institute / Rite of Renaissance",
+    "email": "gitdeeper@gmail.com",
+    "orcid": "0009-0003-8903-0029"
+  },
+  "identifiers": {
+    "zenodo_doi": "10.5281/zenodo.24559255",
+    "figshare_doi": "10.6084/m9.figshare.35136991",
+    "github": "https://github.com/gitdeeper16/NASA-GATEWAY",
+    "website": "https://nasa-gateway.netlify.app"
+  },
+  "links": {
+    "zenodo": "https://doi.org/10.5281/zenodo.24559255",
+    "figshare": "https://doi.org/10.6084/m9.figshare.35136991",
+    "github": "https://github.com/gitdeeper16/NASA-GATEWAY",
+    "website": "https://nasa-gateway.netlify.app"
+  },
+  "contents": {
+    "paper": [
+      "paper/NASA_Gateway_Safety_Assurance_and_Formal_Verification.md",
+      "paper/NASA_Gateway_Traceability_Gap_Research_Paper_v1.0.0.pdf"
+    ],
+    "figures": [
+      "figures/Fig1_Traceability_Chain_Gap.png",
+      "figures/Fig2_Two_Pathways_Interface.png",
+      "figures/Fig3_MSM_VSM_Architecture.png",
+      "figures/Fig4_Evidence_Classification_Taxonomy.png",
+      "figures/Fig5_Gateway_Lunar_Orbit.png",
+      "figures/Fig6_Assurance_Case_GSN_Structure.png"
+    ],
+    "data": [
+      "data/traceability_matrix.csv",
+      "data/evidence_classification.csv",
+      "data/requirement_to_property.csv"
+    ],
+    "docs": [
+      "docs/methodology_notes.md",
+      "docs/figure_provenance.md"
+    ],
+    "scripts": [
+      "scripts/validate.py",
+      "scripts/build_pdf.sh",
+      "scripts/build_latex.sh"
+    ],
+    "tests": [
+      "tests/run_all.sh",
+      "tests/test_structure.sh",
+      "tests/test_metadata.sh",
+      "tests/test_data.sh",
+      "tests/test_figures.sh",
+      "tests/test_content.sh"
+    ]
+  },
+  "stats": {
+    "words": 6829,
+    "figures": 6,
+    "csv_files": 3,
+    "sources": 11,
+    "tests": 49,
+    "tests_passing": 49
+  },
+  "keywords": [
+    "NASA Gateway",
+    "autonomous systems",
+    "safety assurance",
+    "formal verification",
+    "Vehicle System Manager",
+    "Module System Manager",
+    "fault management",
+    "assume-guarantee contracts",
+    "runtime verification",
+    "control authority",
+    "traceability"
+  ]
+}

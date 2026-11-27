@@ -1,0 +1,9 @@
+step,step_name,evidence_found,source_document,source_section,notes
+1,Hazard Identified,Yes,DSG-RQMT-001,L2-GW-0111; L2-GW-0112; L2-GW-0113,Requires catastrophic hazard identification and control verification
+2,Safety Requirement,Yes,DSG-RQMT-001,L2-GW-0199,Autonomous operation required for catastrophic hazard control
+3,Autonomous Function,Yes,Multiple architecture docs,Sections on VSM and MSM roles,Distributed autonomy documented at architecture level
+4,Authority Boundary,Partial,Trustworthy Autonomy (2023),Domain of Control concept,Principle documented; complete operational rules not established
+5,Decision/Escalation Rule,No,None identified,None,No public document establishes complete decision/escalation rules
+6,Formal Property/AGC,Partial,AGC paper (2023),MSM ICD contracts,Examples published; not exhaustive
+7,Verification Evidence,Partial,AGC paper (2023); R2U2 paper,Development-time and runtime methods,Methods documented; coverage not established
+8,Operational Response,Partial,Refueling paper (2024); Risk-reduction (2022),VSM coordination examples,Examples published; not exhaustive

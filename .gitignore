@@ -1,0 +1,41 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Cache
+.cache/
+.output/
+
+# Netlify
+.netlify/
+
+# Local environment
+.env
+.env.local
+
+# Editor
+.vscode/
+.idea/
+*.sublime-*
+
+# Large files (should not commit PDFs of sources without permission)
+sources/*.pdf
