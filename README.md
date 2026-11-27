@@ -153,7 +153,53 @@ Six evidence categories are used throughout the analysis:
 
 ## Figures
 
-| Figure | File | Location in Paper |
+<p align="center">
+  <a href="figures/Fig1_Traceability_Chain_Gap.png">
+    <img src="figures/Fig1_Traceability_Chain_Gap.png" alt="Figure 1 — Traceability chain gap" width="700">
+  </a>
+</p>
+<p align="center"><em>Figure 1 — Traceability chain gap (Section 5.3)</em></p>
+
+<p align="center">
+  <a href="figures/Fig2_Two_Pathways_Interface.png">
+    <img src="figures/Fig2_Two_Pathways_Interface.png" alt="Figure 2 — Two pathways interface" width="700">
+  </a>
+</p>
+<p align="center"><em>Figure 2 — Two pathways interface (Section 5.1)</em></p>
+
+<p align="center">
+  <a href="figures/Fig3_MSM_VSM_Architecture.png">
+    <img src="figures/Fig3_MSM_VSM_Architecture.png" alt="Figure 3 — MSM–VSM architecture" width="700">
+  </a>
+</p>
+<p align="center"><em>Figure 3 — MSM–VSM architecture (Section 4.1)</em></p>
+
+<p align="center">
+  <a href="figures/Fig4_Evidence_Classification_Taxonomy.png">
+    <img src="figures/Fig4_Evidence_Classification_Taxonomy.png" alt="Figure 4 — Evidence classification taxonomy" width="700">
+  </a>
+</p>
+<p align="center"><em>Figure 4 — Evidence classification taxonomy (Section 3.4)</em></p>
+
+<p align="center">
+  <a href="figures/Fig5_Gateway_Lunar_Orbit.png">
+    <img src="figures/Fig5_Gateway_Lunar_Orbit.png" alt="Figure 5 — Gateway lunar orbit" width="700">
+  </a>
+</p>
+<p align="center"><em>Figure 5 — Gateway lunar orbit (Section 1)</em></p>
+
+<p align="center">
+  <a href="figures/Fig6_Assurance_Case_GSN_Structure.png">
+    <img src="figures/Fig6_Assurance_Case_GSN_Structure.png" alt="Figure 6 — Assurance case GSN structure" width="700">
+  </a>
+</p>
+<p align="center"><em>Figure 6 — Assurance case GSN structure (Section 5.3)</em></p>
+
+---
+
+### Figure index
+
+| # | File | Location in Paper |
 |:-:|---|---|
 | 1 | `Fig1_Traceability_Chain_Gap.png` | Section 5.3 |
 | 2 | `Fig2_Two_Pathways_Interface.png` | Section 5.1 |
