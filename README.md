@@ -8,6 +8,7 @@
 
 [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24559255.svg)](https://doi.org/10.5281/zenodo.24559255)
 [![Figshare DOI](https://img.shields.io/badge/Figshare-10.6084%2Fm9.figshare.35136991-orange)](https://doi.org/10.6084/m9.figshare.35136991)
+[![OSF Registration](https://img.shields.io/badge/OSF%20Registration-10.17605%2FOSF.IO%2FFN2QW-blue)](https://doi.org/10.17605/OSF.IO/FN2QW)
 [![License: CC BY 4.0](https://img.shields.io/badge/Docs-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0003--8903--0029-a6ce39?logo=orcid&logoColor=white)](https://orcid.org/0009-0003-8903-0029)
 [![Version](https://img.shields.io/badge/Version-1.1.0-blue)](CHANGELOG.md)
@@ -298,6 +299,8 @@ Machine-readable metadata is in [`CITATION.cff`](CITATION.cff).
 **APA**
 
 > Baladi, S. (2026). *The Interface Between Safety Assurance and Formal Verification in NASA Gateway Autonomous Systems: A Traceability Gap in Public Documentation* (Version 1.1.0). Zenodo. https://doi.org/10.5281/zenodo.24559255
+ 
+> **OSF Preregistration:** https://doi.org/10.17605/OSF.IO/FN2QW
 
 <details>
 <summary><b>BibTeX</b></summary>
@@ -328,6 +331,7 @@ Machine-readable metadata is in [`CITATION.cff`](CITATION.cff).
 | Website | [nasa-gateway.netlify.app](https://nasa-gateway.netlify.app) |
 | Zenodo | [10.5281/zenodo.24559255](https://doi.org/10.5281/zenodo.24559255) |
 | Figshare | [10.6084/m9.figshare.35136991](https://doi.org/10.6084/m9.figshare.35136991) |
+| OSF | [10.17605/OSF.IO/FN2QW](https://doi.org/10.17605/OSF.IO/FN2QW) |
 | Mirrors | [GitHub](https://github.com/gitdeeper16/NASA-GATEWAY) · [GitLab](https://gitlab.com/gitdeeper16/NASA-GATEWAY) · [Gitea](https://gitea.com/gitdeeper16/NASA-GATEWAY) · [Codeberg](https://codeberg.org/gitdeeper16/NASA-GATEWAY) · [Bitbucket](https://bitbucket.org/gitdeeper16/NASA-GATEWAY) |
 
 ## License
