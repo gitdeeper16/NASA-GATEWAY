@@ -1,0 +1,49 @@
+# Phase II-bis — Scenario S4 (H1: active_constraint violation)
+scenario_id: S4
+version: "1.0-bis"
+date: "2026-11-28"
+hypotheses_ref: ["H1"]
+
+description: >
+  A component fails at cycle 3. Simultaneously, an active constraint is
+  declared from cycle 3 onward: the failed component's recovery requires
+  SR2, which is reserved for a priority mission. Attempting recover_local
+  would violate the active constraint.
+
+  H1 test:
+  - control: R4c has threshold 1 cycle of conflict, so it escalates after
+    1 cycle. R1c has threshold 3, so it escalates after 3 cycles. Before
+    R1c fires, R1c may resolve_local (if local_fault_count >= 3) and
+    would_violate = True → safety_violations increments.
+  - treatment: R4 (no threshold) escalates immediately → resolve_local
+    never executes → safety_violations = 0.
+
+initial_state:
+  components: 3
+  shared_resources: 2
+  vsm_authority: "delegated"
+  msm_authority_delegated: true
+  comm_channel: "up"
+
+recovery:
+  required_capacity: 0.5
+
+constraint:
+  type: resource_reservation
+  resource: "SR2"
+  active_from_cycle: 3
+  reason: "Priority mission holds SR2"
+
+fault_injection:
+  type: component_failure
+  target: "C2"
+  at_cycle: 3
+  severity: 0.5
+  persist_until: 20
+
+expected_rule: R4
+
+can_fail_how:
+  - "FM-1: constraint_conflict never set to True → no violation possible."
+  - "FM-2: treatment R4 and control R4c both escalate at the same cycle → no effect."
+  - "FM-3: neither condition attempts recover_local → safety_violations = 0 in both."

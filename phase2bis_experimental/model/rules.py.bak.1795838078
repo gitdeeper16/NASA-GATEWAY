@@ -1,0 +1,106 @@
+"""Escalation rules for Phase II-bis.
+
+Treatment rules (R1-R5) are derived from safety constraints.
+Control rules (R1c-R5c) are structurally equivalent but use looser thresholds.
+"""
+from __future__ import annotations
+
+from model.state import RuleView
+
+
+# Control thresholds — looser than treatment (which is structural).
+CONTROL_THRESHOLDS = {
+    "R1c": 3,   # cycles of local fault persistence
+    "R2c": 20,  # x10: severity threshold
+    "R3c": 3,   # consecutive local recovery failures
+    "R4c": 1,   # cycles after constraint activation
+    "R5c": 2,   # cycles of comm silence
+}
+
+
+# ─── Treatment rules (R1-R5) ───
+
+def R1_local_containable(view: RuleView) -> bool:
+    """R1: local fault is containable. Do NOT escalate; resolve locally."""
+    return view.local_containable and view.local_fault_count >= 1
+
+
+def R2_shared_resource(view: RuleView) -> bool:
+    """R2: shared resource affected. Escalate to VSM."""
+    return view.shared_resource_unhealthy
+
+
+def R3_local_recovery_failed(view: RuleView) -> bool:
+    """R3: local recovery has failed repeatedly. Escalate."""
+    return view.local_recovery_failures >= 2
+
+
+def R4_constraint_conflict(view: RuleView) -> bool:
+    """R4: an active constraint conflicts with local action. Escalate."""
+    return view.constraint_conflict
+
+
+def R5_comm_lost(view: RuleView) -> bool:
+    """R5: communication lost. Enter safe mode."""
+    return view.comm_silence_cycles >= 1
+
+
+TREATMENT_RULES = {
+    "R1": R1_local_containable,
+    "R2": R2_shared_resource,
+    "R3": R3_local_recovery_failed,
+    "R4": R4_constraint_conflict,
+    "R5": R5_comm_lost,
+}
+
+RULE_POLARITY = {
+    "R1": "resolve_local",
+    "R2": "escalate",
+    "R3": "escalate",
+    "R4": "escalate",
+    "R5": "safe_mode",
+}
+
+
+# ─── Control rules (R1c-R5c) — structurally equivalent, looser thresholds ───
+
+def R1_control(view: RuleView) -> bool:
+    return view.local_fault_count >= CONTROL_THRESHOLDS["R1c"]
+
+
+def R2_control(view: RuleView) -> bool:
+    return view.shared_resource_unhealthy  # same as R2 (structural)
+
+
+def R3_control(view: RuleView) -> bool:
+    return view.local_recovery_failures >= CONTROL_THRESHOLDS["R3c"]
+
+
+def R4_control(view: RuleView) -> bool:
+    """R4_control: escalate only after N cycles of constraint conflict.
+    Structurally equivalent to R4 but with a debounce threshold."""
+    return (
+        view.constraint_conflict
+        and view.cycle >= CONTROL_THRESHOLDS["R4c"]
+    )
+
+
+def R5_control(view: RuleView) -> bool:
+    return view.comm_silence_cycles >= CONTROL_THRESHOLDS["R5c"]
+
+
+CONTROL_RULES = {
+    "R1c": R1_control,
+    "R2c": R2_control,
+    "R3c": R3_control,
+    "R4c": R4_control,
+    "R5c": R5_control,
+}
+
+CONTROL_POLARITY = {
+    "R1c": "resolve_local",
+    "R2c": "escalate",
+    "R3c": "escalate",
+    "R4c": "escalate",
+    "R5c": "safe_mode",
+}

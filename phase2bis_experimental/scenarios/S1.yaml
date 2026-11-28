@@ -1,0 +1,44 @@
+# Phase II-bis — Scenario S1 (Negative control)
+scenario_id: S1
+version: "1.0-bis"
+date: "2026-11-28"
+hypotheses_ref: []   # S1 is a negative control, not a hypothesis test
+
+description: >
+  A single component under MSM control fails at cycle 3. The failure is
+  fully containable within the MSM domain: no shared resource is touched,
+  the VSM does not need to act, and local recovery (R1) is expected to
+  resolve the fault. This is the case where the treatment should NOT
+  escalate, and where escalating would itself be a defect.
+
+  This scenario is a NEGATIVE CONTROL. It must produce:
+  - would_violate = False in every cycle
+  - safety_violations = 0 in both conditions
+  - secondary_damage = 0
+  - no containment needed
+
+  If would_violate becomes True here, the design is broken.
+
+initial_state:
+  components: 3
+  shared_resources: 0
+  vsm_authority: "nominal"
+  msm_authority_delegated: true
+  comm_channel: "up"
+
+recovery:
+  required_capacity: 0.5    # less than available (3 healthy components × 1.0)
+
+fault_injection:
+  type: component_failure
+  target: "C2"
+  at_cycle: 3
+  severity: 0.6
+  persist_until: 20
+
+expected_rule: R1
+
+can_fail_how:
+  - "FM-1: R1 fails to fire because local_recovery_path_available is mis-specified."
+  - "FM-2: R1 fires but the control also fires, producing a false escalation under treatment."
+  - "FM-3: would_violate becomes True because msm_authority_delegated is mis-set."

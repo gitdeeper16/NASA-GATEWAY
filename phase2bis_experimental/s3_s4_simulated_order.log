@@ -1,0 +1,30 @@
+[SIMULATED] pilot seeds (first 5): [382857, 1203392, 1344673, 2149014, 2273391]
+
+
+=== [SIMULATED] S3 ===
+seed |      cond | att guard  sv cand exec esc
+------------------------------------------------------------
+382857 |   control |   2     0   1    1    1  14
+1203392 |   control |   2     0   1    1    1  14
+1344673 |   control |   2     0   1    1    1  14
+2149014 |   control |   2     0   1    1    1  14
+2273391 |   control |   2     0   1    1    1  14
+382857 | treatment |   1    15   0   15    0  15
+1203392 | treatment |   1    15   0   15    0  15
+1344673 | treatment |   1    15   0   15    0  15
+2149014 | treatment |   1    15   0   15    0  15
+2273391 | treatment |   1    15   0   15    0  15
+
+=== [SIMULATED] S4 ===
+seed |      cond | att guard  sv cand exec esc
+------------------------------------------------------------
+382857 |   control |   1     0   1    1    1  16
+1203392 |   control |   1     0   1    1    1  16
+1344673 |   control |   1     0   1    1    1  16
+2149014 |   control |   1     0   1    1    1  16
+2273391 |   control |   1     0   1    1    1  16
+382857 | treatment |   0    17   0   17    0  17
+1203392 | treatment |   0    17   0   17    0  17
+1344673 | treatment |   0    17   0   17    0  17
+2149014 | treatment |   0    17   0   17    0  17
+2273391 | treatment |   0    17   0   17    0  17

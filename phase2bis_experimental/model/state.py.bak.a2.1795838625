@@ -1,0 +1,115 @@
+"""SystemState and component definitions for Phase II-bis."""
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Optional
+
+
+@dataclass
+class Component:
+    id: str
+    healthy: bool = True
+    capacity: float = 1.0
+
+
+@dataclass
+class SharedResource:
+    id: str
+    healthy: bool = True
+    severity_lost: float = 0.0
+
+
+@dataclass
+class SystemState:
+    # Core
+    cycle: int = 0
+    components: dict[str, Component] = field(default_factory=dict)
+    shared_resources: dict[str, SharedResource] = field(default_factory=dict)
+
+    # Authority and constraints
+    vsm_authority: str = "nominal"
+    msm_authority_delegated: bool = True
+    active_constraints: list[str] = field(default_factory=list)
+    constraint_conflict: bool = False
+
+    # Knowledge
+    local_resource_identified: bool = False
+    vsm_resource_identified: bool = False
+    comm_channel: str = "up"
+    last_comm_up_at: int = 0
+
+    # Capacity
+    available_capacity: float = 0.0
+    required_recovery_capacity: float = 0.0
+
+    # Escalation and containment
+    escalation_requested: bool = False
+    escalation_requested_at: Optional[int] = None
+    vsm_acknowledged: bool = False
+    vsm_acknowledged_at: Optional[int] = None
+    containment_effective: bool = False
+    containment_effective_at: Optional[int] = None
+
+    # Actions and violations
+    pending_local_action: Optional[str] = None
+    candidate_would_violate: bool = False
+    candidate_violation_reason: Optional[str] = None
+    safety_violations: int = 0
+    executed_violation_log: list[dict] = field(default_factory=list)
+
+    # H1-bis instrumentation (2026-11-28)
+    # local_recovery_attempts: number of resolve_local decisions EXECUTED,
+    #   regardless of whether they violated. Distinct from
+    #   local_recovery_failures (which counts injected fault failures).
+    # treatment_escalations_due_to_guard: number of times the treatment
+    #   guard converted a resolve_local decision into an escalate, BEFORE
+    #   execution. Control never increments this (no guard).
+    # candidate_violations_count: number of cycles where
+    #   candidate_would_violate was True (regardless of what happened).
+    local_recovery_attempts: int = 0
+    treatment_escalations_due_to_guard: int = 0
+    candidate_violations_count: int = 0
+
+    # Outcomes
+    secondary_damage: int = 0
+    consistency: bool = True
+    safe_mode_reached: bool = False
+    safe_mode_cycle: Optional[int] = None
+    events: list[str] = field(default_factory=list)
+
+    # Counters
+    local_fault_count: int = 0
+    local_recovery_failures: int = 0
+    escalations_total: int = 0
+    escalations_correct: int = 0
+    escalations_false: int = 0
+    escalations_missed: int = 0
+
+    def to_rule_view(self, local_containable: bool) -> "RuleView":
+        """Return an immutable view for rule evaluation."""
+        return RuleView(
+            cycle=self.cycle,
+            local_fault_count=self.local_fault_count,
+            local_recovery_failures=self.local_recovery_failures,
+            shared_resource_unhealthy=any(
+                not r.healthy for r in self.shared_resources.values()
+            ),
+            comm_silence_cycles=(
+                self.cycle - (self.last_comm_up_at or 0)
+                if self.comm_channel == "down" else 0
+            ),
+            constraint_conflict=self.constraint_conflict,
+            local_containable=local_containable,
+        )
+
+
+@dataclass(frozen=True)
+class RuleView:
+    """Read-only projection for rule functions. No outcome variables."""
+    cycle: int
+    local_fault_count: int
+    local_recovery_failures: int
+    shared_resource_unhealthy: bool
+    comm_silence_cycles: int
+    constraint_conflict: bool
+    local_containable: bool

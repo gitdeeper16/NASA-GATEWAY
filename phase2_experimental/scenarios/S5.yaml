@@ -1,0 +1,43 @@
+# Phase II — Scenario S5
+# Immutable header
+scenario_id: S5
+version: "1.0"
+frozen_at: "2026-11-27"
+preregistration_ref: "PREREGISTRATION.md#4"
+hypotheses_ref: ["H1", "H4"]
+
+description: >
+  The MSM–VSM communication channel is cut at cycle 5. From that point on,
+  the MSM cannot escalate and the VSM cannot instruct. The treatment rule
+  R5 requires the MSM to enter safe mode on loss of communication. The
+  scenario tests whether safe mode, so triggered, prevents safety
+  violations (H4). This is the scenario in which no escalation is
+  physically possible, so all the safety burden falls on R5.
+
+initial_state:
+  components: 3
+  shared_resources: 0
+  vsm_authority: "nominal"
+  comm_channel: "up"
+
+fault_injection:
+  type: channel_cut
+  target: "MSM-VSM"
+  at_cycle: 5
+  severity: 1.0
+  repeat: 0
+  persist_until: 20
+
+expected_rule: R5
+treatment_property: "[] (comm_lost -> <> safe_mode)"
+control_rule: R5_control
+
+# H4 is falsified if ANY safety violation occurs in S5 under treatment.
+# That is a very strict criterion, and the scenario must therefore be
+# capable of producing a violation.
+can_fail_how:
+  - "FM-1: R5 fires and safe mode is reached, but safe mode itself causes a violation (e.g. safe mode drops a component that the VSM later needs). H4 falsified by a subtle path. This is why the run records reaching safe mode separately from whether a violation occurred."
+  - "FM-2: R5 does not fire because the channel-cut signal is not detected (the model's comm_lost predicate is wrong). The MSM continues local operation, takes a local action, and the run records a safety violation. H4 falsified by missed detection."
+  - "FM-3: R5 fires, safe mode reached, no safety violation — but the control (R5_control, threshold 3 cycles of silence) also reaches safe mode, so the H1 effect in S5 is zero. Pre-registered possibility."
+  - "FM-4: R5 fires and safe mode is reached, but the MSM's state after safe mode is inconsistent with the VSM's last known state (the VSM does not know safe mode was entered). Consistency is broken. H3 is not tested in S5, but the disagreement is recorded descriptively and may motivate a future hypothesis."
+  - "FM-5: The channel is never actually cut because the model's message channel does not implement the cut faithfully. H4 would pass for the wrong reason. This is the model-level failure that the scenario schema check and the TLA+ comm_lost property are designed to catch."

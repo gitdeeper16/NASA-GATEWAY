@@ -1,0 +1,10 @@
+# Archive of formal/ before Addendum 001 — 2026-11-27
+# These files are NOT the frozen versions. They are the state
+# found during forensic inspection, preserved for documentation.
+#
+# The frozen stub f13fc1b2... was NOT recovered. See Addendum 001.
+
+5613b27c3b16d5d2368d1d42068aaf135f29478e32fb4ec9c3ad527f9d6143ad  GatewayPhase2.tla
+ccf1a488ea2ed62ff3a8fa878d85d949686095a128fc649c08e4e99a6264be35  properties.tla
+32f64a05c511204f2968141e8c79fb50f750d0f453b356ac519f57a1d62da9cd  GatewayPhase2.cfg
+7cdb8608ee839234c0331501a9c01512843d2f988849b5fc844a2d3967ee0379  model_check.sh

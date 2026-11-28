@@ -1,0 +1,43 @@
+# Phase II-bis — Scenario S5 (exploratory: comm loss + safe mode)
+scenario_id: S5
+version: "1.0-bis"
+date: "2026-11-28"
+hypotheses_ref: []   # exploratory only (per Q10 decision)
+
+description: >
+  Communication channel is lost at cycle 2 (from the start, comm_channel
+  becomes "down"). A component fails at cycle 3. MSM must enter safe mode.
+
+  This is an EXPLORATORY scenario (per Q10 decision, option a). It records:
+  - escalation_requested (may fire, may not)
+  - vsm_acknowledged (should NOT fire when comm down)
+  - safe_mode_reached
+  - safety_violations (if any, recorded; not forced)
+
+  No H1 or H2 claim is made from this scenario in Phase II-bis.
+
+initial_state:
+  components: 3
+  shared_resources: 1
+  vsm_authority: "nominal"
+  msm_authority_delegated: true
+  comm_channel: "up"   # will be set to "down" at cycle 2
+
+recovery:
+  required_capacity: 0.5
+
+fault_injection:
+  type: component_failure
+  target: "C2"
+  at_cycle: 3
+  severity: 0.7
+  persist_until: 20
+
+comm_loss_at_cycle: 2
+
+expected_rule: R5
+
+can_fail_how:
+  - "FM-1: R5 does not fire because comm_silence_cycles is miscounted."
+  - "FM-2: safe mode is reached but VSM still acknowledges (should not when comm down)."
+  - "FM-3: safety_violations occur but are not recorded."

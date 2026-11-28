@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "The Interface Between Safety Assurance and Formal Verification in NASA Gateway Autonomous Systems: A Traceability Gap in Public Documentation"
+version: 1.1.0
+doi: 10.5281/zenodo.24559255
+date-released: 2026-11-28
+license: MIT
+
+authors:
+  - family-names: Baladi
+    given-names: Samir
+    orcid: "https://orcid.org/0009-0003-8903-0029"
+    affiliation: "Ronin Institute / Rite of Renaissance"
+    email: gitdeeper@gmail.com
+    website: "https://nasa-gateway.netlify.app"
+
+repository-code: "https://github.com/gitdeeper16/NASA-GATEWAY"
+url: "https://nasa-gateway.netlify.app"
+
+keywords:
+  - NASA Gateway
+  - safety assurance
+  - formal verification
+  - autonomous systems
+  - traceability gap
+  - documentary analysis
+
+abstract: >
+  A documentary study of the interface between safety assurance and formal
+  verification in NASA Gateway autonomous systems, identifying a traceability
+  gap in public documentation. Version 1.1.0 adds the Phase II Independent
+  Evidence Review, consolidating four sub-phases (II-bis, II-ter, II-quater,
+  II-quinquies) and documenting three resolved contradictions without
+  modifying any project code.
+
+references:
+  - type: software
+    title: "NASA-GATEWAY v1.0.0"
+    version: 1.0.0
+    doi: 10.5281/zenodo.24559255
+    date-released: 2026-11-27

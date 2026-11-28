@@ -1,8 +1,8 @@
-# Project Inventory — NASA Gateway v1.0.0
+# Project Inventory — NASA Gateway v1.1.0
 
 **Project:** NASA Gateway — Safety Assurance & Formal Verification
-**Version:** 1.0.0
-**Date:** 2026-11-26
+**Version:** 1.1.0
+**Date:** 2026-11-28
 **Author:** Samir Baladi
 **License:** CC-BY-4.0
 
@@ -20,7 +20,7 @@
 
 ---
 
-## Root files (14)
+## Root files (18)
 
 | # | File | Purpose |
 |---|------|---------|
@@ -33,11 +33,15 @@
 | 7 | `LICENSE` | CC-BY-4.0 |
 | 8 | `PROJECT_SUMMARY.txt` | One-page summary |
 | 9 | `ROADMAP.md` | Publication roadmap |
-| 10 | `VERSION` | `1.0.0` |
+| 10 | `VERSION` | `1.1.0` |
 | 11 | `manifest.json` | Machine-readable project metadata |
 | 12 | `netlify.toml` | Netlify deployment config |
 | 13 | `scientific_state.json` | Research state snapshot |
 | 14 | `.gitignore` | Git ignore rules |
+| 15 | `PHASE_II_CONSOLIDATED_REPORT.md` | Consolidated Phase II evidence review |
+| 16 | `PHASE_II_QUATER_MANDATE.md` | Signed mandate (Phase II-quater) |
+| 17 | `PHASE_II_QUINQUIES_MANDATE.md` | Signed mandate (Phase II-quinquies) |
+| 18 | `phase2ter_trace_seeded.py` | Read-only tracing script (Phase II-ter) |
 
 ---
 
@@ -52,6 +56,21 @@
 | `docs/` | `methodology_notes.md`, `figure_provenance.md`, `README.md` |
 | `scripts/` | `validate.py`, `build_pdf.sh`, `build_latex.sh`, `README.md` |
 | `tests/` | `run_all.sh` + 5 test files + `README.md` (49 tests) |
+| `phase2bis_experimental/` | Phase II experimental records (see below) |
+
+---
+
+## Phase II experimental artifacts
+
+| File | Content | Status |
+|---|---|---|
+| `phase2bis_experimental/phase2_all.log` | Phase II-bis summary (30 rows) | CLOSED |
+| `phase2bis_experimental/phase2ter_trace.jsonl` | Phase II-ter cycle-level records (600 rows) | CLOSED |
+| `phase2bis_experimental/phase2ter_trace.log` | Phase II-ter log (780 lines) | CLOSED |
+| `phase2bis_experimental/phase2ter_trace_seeded.py` | Read-only tracing script | READ-ONLY |
+| `phase2bis_experimental/PHASE_II_QUATER_MANDATE.md` | Signed mandate | READ-ONLY |
+| `phase2bis_experimental/PHASE_II_QUINQUIES_MANDATE.md` | Signed mandate | READ-ONLY |
+| `phase2bis_experimental/PHASE_II_CONSOLIDATED_REPORT.md` | Consolidated report | ARCHIVED |
 
 ---
 
@@ -107,3 +126,4 @@
 | Version | Date | Notes |
 |---|---|---|
 | 1.0.0 | 2026-11-26 | Phase I complete: documentary analysis, 6 figures, 3 CSVs, 49 tests |
+| 1.1.0 | 2026-11-28 | Phase II complete: independent evidence review (bis/ter/quater/quinquies), 3 contradictions resolved, consolidated report added |

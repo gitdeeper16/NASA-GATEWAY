@@ -1,0 +1,40 @@
+============================= test session starts ==============================
+platform android -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- /data/data/com.termux/files/usr/bin/python
+cachedir: .pytest_cache
+rootdir: /storage/emulated/0/Download/NASA-GATEWAY/phase2bis_experimental
+plugins: cov-7.1.0, anyio-4.14.1
+collecting ... collected 31 items
+
+tests/test_design_integrity.py::test_7_seed_separation PASSED            [  3%]
+tests/test_design_integrity.py::test_1_existence_of_violations PASSED    [  6%]
+tests/test_design_integrity.py::test_3_separation_candidate_vs_executed PASSED [  9%]
+tests/test_design_integrity.py::test_6_determinism PASSED                [ 12%]
+tests/test_design_integrity.py::test_4_H1_effect PASSED                  [ 16%]
+tests/test_design_integrity.py::test_5_H2_effect PASSED                  [ 19%]
+tests/test_unit_backward_compat.py::test_single_fault_s1 PASSED          [ 22%]
+tests/test_unit_backward_compat.py::test_single_fault_s2 PASSED          [ 25%]
+tests/test_unit_backward_compat.py::test_single_fault_s4 PASSED          [ 29%]
+tests/test_unit_backward_compat.py::test_multi_fault_s3 PASSED           [ 32%]
+tests/test_unit_backward_compat.py::test_single_fault_shape_is_unchanged PASSED [ 35%]
+tests/test_unit_s3_transition.py::test_s3_initial_capacity PASSED        [ 38%]
+tests/test_unit_s3_transition.py::test_s3_boundary_after_first_fault PASSED [ 41%]
+tests/test_unit_s3_transition.py::test_s3_overflow_after_second_fault PASSED [ 45%]
+tests/test_unit_s3_transition.py::test_s3_transition_is_due_to_second_fault PASSED [ 48%]
+tests/test_unit_s3_transition.py::test_s3_faults_are_at_distinct_cycles PASSED [ 51%]
+tests/test_unit_s3_transition.py::test_s3_faults_target_distinct_components PASSED [ 54%]
+tests/test_unit_violations.py::test_authority_no_violation_when_delegated PASSED [ 58%]
+tests/test_unit_violations.py::test_authority_violation_when_not_delegated PASSED [ 61%]
+tests/test_unit_violations.py::test_authority_independent_of_vsm_authority PASSED [ 64%]
+tests/test_unit_violations.py::test_shared_resource_no_violation_when_healthy PASSED [ 67%]
+tests/test_unit_violations.py::test_shared_resource_violation_when_unhealthy PASSED [ 70%]
+tests/test_unit_violations.py::test_active_constraint_no_violation_when_false PASSED [ 74%]
+tests/test_unit_violations.py::test_active_constraint_violation_when_true PASSED [ 77%]
+tests/test_unit_violations.py::test_capacity_no_violation_when_sufficient PASSED [ 80%]
+tests/test_unit_violations.py::test_capacity_violation_when_insufficient PASSED [ 83%]
+tests/test_unit_violations.py::test_capacity_boundary_equal PASSED       [ 87%]
+tests/test_unit_violations.py::test_priority_authority_first PASSED      [ 90%]
+tests/test_unit_violations.py::test_priority_shared_before_constraint PASSED [ 93%]
+tests/test_unit_violations.py::test_priority_constraint_before_capacity PASSED [ 96%]
+tests/test_unit_violations.py::test_non_local_actions_never_violate PASSED [100%]
+
+============================== 31 passed in 0.71s ==============================

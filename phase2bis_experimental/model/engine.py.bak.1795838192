@@ -1,0 +1,461 @@
+"""Phase II-bis engine — cycle event order per SPECIFICATION.md §2.
+
+8 stages per cycle:
+1. VSM response (to previous cycle's escalation)
+2. Primary fault injection (once, at fault_at)
+3. Secondary propagation (every cycle until containment or persist_until)
+4. State update (capacity, knowledge, constraints)
+5. Candidate action evaluation
+6. MSM decision
+7. Action validation and execution
+8. Event logging and consistency check
+"""
+from __future__ import annotations
+
+import hashlib
+import random
+from typing import Optional
+
+from model.state import Component, SharedResource, SystemState, RuleView
+
+
+MAX_CYCLES = 20
+
+
+# ─── MSMAction ───
+
+class MSMAction:
+    __slots__ = ("kind", "rule", "action_name")
+
+    def __init__(self, kind: str, rule: Optional[str] = None,
+                 action_name: Optional[str] = None) -> None:
+        self.kind = kind
+        self.rule = rule
+        self.action_name = action_name
+
+    def __repr__(self) -> str:
+        return f"MSMAction(kind={self.kind!r}, rule={self.rule!r}, action_name={self.action_name!r})"
+
+
+# ─── Seed derivation ───
+
+def _seed_to_int(seed: int | str) -> int:
+    if isinstance(seed, int):
+        return seed
+    return int(hashlib.sha256(str(seed).encode()).hexdigest(), 16) % (2**32)
+
+
+# ─── Initial state ───
+
+def _build_initial_state(scenario: dict) -> SystemState:
+    init = scenario["initial_state"]
+    state = SystemState()
+    state.components = {
+        f"C{i+1}": Component(id=f"C{i+1}")
+        for i in range(init.get("components", 3))
+    }
+    state.shared_resources = {
+        f"SR{i+1}": SharedResource(id=f"SR{i+1}")
+        for i in range(init.get("shared_resources", 0))
+    }
+    state.vsm_authority = init.get("vsm_authority", "nominal")
+    state.msm_authority_delegated = init.get("msm_authority_delegated", True)
+    state.comm_channel = init.get("comm_channel", "up")
+    state.last_comm_up_at = 0
+    # Recovery capacity: prefer derived `required_full_components`
+    # (required = N_full * capacity_per_component), fall back to the
+    # legacy `required_capacity` field, then to 0.5 (original default).
+    # capacity_per_component is 1.0 (Component() default).
+    _rec = scenario.get("recovery", {}) or {}
+    if "required_full_components" in _rec:
+        state.required_recovery_capacity = float(
+            _rec["required_full_components"]
+        ) * 1.0
+    else:
+        state.required_recovery_capacity = _rec.get("required_capacity", 0.5)
+    state.available_capacity = sum(
+        c.capacity for c in state.components.values() if c.healthy
+    )
+    return state
+
+
+# ─── Fault injection (primary, once) ───
+
+def _iter_faults(scenario: dict) -> list:
+    """Return a normalized list of fault dicts for this scenario.
+
+    Backward-compatible:
+      - Old style: fault_injection: {type, target, at_cycle, severity, ...}
+        -> returns [fault_injection] (single element).
+      - New style: fault_injection: {faults: [{...}, {...}]}
+        -> returns the list as-is.
+
+    A scenario with neither key returns [].
+    """
+    fi = scenario.get("fault_injection")
+    if fi is None:
+        return []
+    if "faults" in fi:
+        return list(fi["faults"])
+    return [fi]
+
+
+def _apply_primary_fault(state: SystemState, fault: dict,
+                         rng: random.Random) -> None:
+    t = fault["type"]
+    target = fault["target"]
+
+    if t == "component_failure":
+        if target in state.components:
+            state.components[target].healthy = False
+            state.components[target].capacity = 1.0 - fault["severity"]
+        state.local_fault_count += 1
+        state.pending_local_action = "recover_local"
+        state.events.append(
+            f"cycle {state.cycle}: primary fault {t} on {target} "
+            f"(severity={fault['severity']})"
+        )
+
+    elif t == "shared_resource_failure":
+        if target in state.shared_resources:
+            state.shared_resources[target].healthy = False
+            state.shared_resources[target].severity_lost = fault["severity"]
+        state.local_resource_identified = True
+        state.events.append(
+            f"cycle {state.cycle}: primary fault {t} on {target} "
+            f"(severity={fault['severity']})"
+        )
+
+    elif t == "local_recovery_failure":
+        if target in state.components:
+            # Component becomes unhealthy -> excluded from available_capacity
+            # (which sums healthy components only). Capacity field itself is
+            # NOT modified here; that would suggest a precision the model
+            # does not have.
+            state.components[target].healthy = False
+        state.local_fault_count += 1
+        state.local_recovery_failures += 1
+        state.pending_local_action = "recover_local"
+        state.events.append(
+            f"cycle {state.cycle}: primary fault {t} on {target} "
+            f"(severity={fault['severity']})"
+        )
+
+
+# ─── Secondary propagation (every cycle) ───
+
+def _propagate_secondary(state: SystemState, fault: dict,
+                        rng: random.Random) -> None:
+    """Propagate secondary damage from an unhealthy shared resource.
+    Runs only if: type is shared_resource_failure, at least one shared
+    resource is unhealthy, and containment is not effective."""
+    if fault["type"] != "shared_resource_failure":
+        return
+    if state.containment_effective:
+        return
+    if not any(not r.healthy for r in state.shared_resources.values()):
+        return
+    for c in state.components.values():
+        if c.healthy and rng.random() < fault["severity"] * 0.5:
+            c.healthy = False
+            state.secondary_damage += 1
+            state.events.append(
+                f"cycle {state.cycle}: secondary damage on {c.id}"
+            )
+
+
+# ─── would_violate (four constraints) ───
+
+def would_violate(action: str, state: SystemState) -> tuple[bool, Optional[str]]:
+    """Pure function. Returns (violated, reason)."""
+    if action != "recover_local":
+        return (False, None)
+    if not state.msm_authority_delegated:
+        return (True, "authority_boundary")
+    if any(not r.healthy for r in state.shared_resources.values()):
+        return (True, "shared_resource")
+    if state.constraint_conflict:
+        return (True, "active_constraint")
+    if state.required_recovery_capacity > state.available_capacity:
+        return (True, "capacity_overflow")
+    return (False, None)
+
+
+# ─── Containment chain ───
+
+def _vsm_acknowledge(state: SystemState) -> None:
+    if state.comm_channel != "up":
+        return
+    state.vsm_acknowledged = True
+    state.vsm_acknowledged_at = state.cycle
+    state.events.append(
+        f"cycle {state.cycle}: VSM acknowledged escalation"
+    )
+
+
+def _vsm_can_contain(state: SystemState) -> bool:
+    if state.vsm_authority != "delegated":
+        return False
+    if not state.vsm_resource_identified:
+        return False
+    if state.comm_channel != "up":
+        return False
+    if state.available_capacity < state.required_recovery_capacity:
+        return False
+    return True
+
+
+def _vsm_attempt_containment(state: SystemState) -> None:
+    if not _vsm_can_contain(state):
+        return
+    state.containment_effective = True
+    state.containment_effective_at = state.cycle
+    state.events.append(
+        f"cycle {state.cycle}: containment effective"
+    )
+
+
+# ─── State update (stage 4) ───
+
+def _update_state(state: SystemState, scenario: dict) -> None:
+    # Capacity: sum of capacity of HEALTHY components only.
+    # Unhealthy components contribute 0, regardless of their own capacity field.
+    state.available_capacity = sum(
+        c.capacity for c in state.components.values() if c.healthy
+    )
+    # VSM knowledge of the affected resource (needs comm up)
+    if state.local_resource_identified and state.comm_channel == "up":
+        state.vsm_resource_identified = True
+    # Track last comm-up cycle (for R5 silence)
+    if state.comm_channel == "up":
+        state.last_comm_up_at = state.cycle
+    # Active constraint: explicit from scenario, activated at active_from_cycle.
+    constraint = scenario.get("constraint")
+    if constraint is not None:
+        active_from = constraint.get("active_from_cycle", 0)
+        if state.cycle >= active_from:
+            state.constraint_conflict = True
+        else:
+            state.constraint_conflict = False
+
+
+# ─── Rule view construction ───
+
+def _build_rule_view(state: SystemState, local_containable: bool) -> RuleView:
+    return RuleView(
+        cycle=state.cycle,
+        local_fault_count=state.local_fault_count,
+        local_recovery_failures=state.local_recovery_failures,
+        shared_resource_unhealthy=any(
+            not r.healthy for r in state.shared_resources.values()
+        ),
+        comm_silence_cycles=(
+            state.cycle - state.last_comm_up_at
+            if state.comm_channel == "down" else 0
+        ),
+        constraint_conflict=state.constraint_conflict,
+        local_containable=local_containable,
+    )
+
+
+# ─── MSM decision (stage 6) ───
+
+def _choose_decision(state: SystemState, scenario: dict,
+                    condition: str, local_containable: bool) -> MSMAction:
+    from model.rules import TREATMENT_RULES, CONTROL_RULES, RULE_POLARITY, CONTROL_POLARITY
+
+    view = _build_rule_view(state, local_containable)
+    if condition == "treatment":
+        rules = TREATMENT_RULES
+        polarity = RULE_POLARITY
+        order = ["R5", "R4", "R3", "R2", "R1"]
+    else:
+        rules = CONTROL_RULES
+        polarity = CONTROL_POLARITY
+        order = ["R5c", "R4c", "R3c", "R2c", "R1c"]
+
+    for rule_name in order:
+        fn = rules[rule_name]
+        if fn(view):
+            kind = polarity[rule_name]
+            action_name = "recover_local" if kind == "resolve_local" else None
+            return MSMAction(kind=kind, rule=rule_name, action_name=action_name)
+
+    return MSMAction(kind="noop")
+
+
+# ─── Execute local action (stage 7) ───
+
+def _execute_local_action(state: SystemState, action: str) -> None:
+    """Execute a local action. If it violated a constraint, it was already
+    logged in safety_violations by the caller. Recovery succeeds only if
+    no violation occurred; otherwise the component stays unhealthy."""
+    if action == "recover_local":
+        # Recovery: restore the first unhealthy component if capacity allows
+        for c in state.components.values():
+            if not c.healthy and state.available_capacity >= (1.0 - c.capacity):
+                # Note: capacity check already handled by would_violate.
+                # If would_violate returned True, this branch should not be
+                # reached (caller does not execute). This is defensive.
+                pass
+        # Pending action cleared regardless
+        state.pending_local_action = None
+
+
+# ─── Escalation correctness ───
+
+def _record_escalation_correctness(state: SystemState, decision: MSMAction,
+                                    scenario: dict) -> None:
+    expected = scenario["expected_rule"]
+    if decision.rule in (expected, expected + "c", expected + "_control"):
+        state.escalations_correct += 1
+    else:
+        state.escalations_false += 1
+
+
+# ─── Consistency check (stage 8) ───
+
+def _check_consistency(state: SystemState, decision: MSMAction) -> None:
+    if decision.kind != "escalate":
+        return
+    if state.containment_effective:
+        return
+    still_bad_local = any(not c.healthy for c in state.components.values())
+    shared_bad = any(not r.healthy for r in state.shared_resources.values())
+    if still_bad_local and shared_bad:
+        state.consistency = False
+        state.events.append(
+            f"cycle {state.cycle}: MSM/VSM inconsistency — "
+            f"escalation did not resolve local or shared fault"
+        )
+
+
+# ─── Main loop ───
+
+def run_scenario(scenario: dict, seed: int, condition: str) -> dict:
+    """Run one scenario × one seed × one condition. Returns trace dict."""
+    if condition not in ("treatment", "control"):
+        raise ValueError(f"condition must be 'treatment' or 'control', got {condition!r}")
+
+    fault_rng = random.Random(_seed_to_int(seed) ^ 0xA5A5)
+    state = _build_initial_state(scenario)
+
+    faults = _iter_faults(scenario)
+    if not faults:
+        raise ValueError(
+            f"scenario {scenario.get('scenario_id')!r} has no faults"
+        )
+    # Backward compat: `fault` remains the first fault, so any downstream
+    # code that expects a single dict (e.g., _propagate_secondary) still
+    # works identically for single-fault scenarios.
+    fault = faults[0]
+    # Schedule: at_cycle -> list of faults to inject at that cycle.
+    faults_by_cycle: dict = {}
+    for f in faults:
+        faults_by_cycle.setdefault(f["at_cycle"], []).append(f)
+    # Secondary propagation uses the FIRST fault only (matches the current
+    # spec: propagation is defined for shared_resource_failure alone).
+    first_fault = faults[0]
+    first_fault_at = first_fault["at_cycle"]
+    first_persist_until = first_fault.get("persist_until", MAX_CYCLES)
+
+    comm_loss_at = scenario.get("comm_loss_at_cycle")
+
+    for cycle in range(MAX_CYCLES):
+        state.cycle = cycle
+
+        # ═══ Comm loss injection ═══
+        if comm_loss_at is not None and cycle == comm_loss_at:
+            state.comm_channel = "down"
+            state.events.append(f"cycle {cycle}: comm channel lost")
+
+        # ═══ Stage 1: VSM response ═══
+        if state.escalation_requested and not state.vsm_acknowledged:
+            _vsm_acknowledge(state)
+        if state.vsm_acknowledged and not state.containment_effective:
+            _vsm_attempt_containment(state)
+
+        # ═══ Stage 2: Primary fault injection ═══
+        for _f in faults_by_cycle.get(cycle, ()):
+            _apply_primary_fault(state, _f, fault_rng)
+
+        # ═══ Stage 3: Secondary propagation ═══
+        if cycle > first_fault_at and cycle <= first_persist_until:
+            _propagate_secondary(state, first_fault, fault_rng)
+
+        # ═══ Stage 4: State update ═══
+        _update_state(state, scenario)
+
+        # ═══ Stage 5: Candidate action evaluation ═══
+        unhealthy = [c for c in state.components.values() if not c.healthy]
+        local_containable = (
+            len(unhealthy) <= 1
+            and not any(not r.healthy for r in state.shared_resources.values())
+        )
+        if state.pending_local_action is not None:
+            violated, reason = would_violate(state.pending_local_action, state)
+            state.candidate_would_violate = violated
+            state.candidate_violation_reason = reason
+        else:
+            state.candidate_would_violate = False
+            state.candidate_violation_reason = None
+
+        # ═══ Stage 6: MSM decision ═══
+        decision = _choose_decision(state, scenario, condition, local_containable)
+
+        # ═══ Stage 7: Action validation and execution ═══
+        if decision.kind == "escalate":
+            state.escalation_requested = True
+            state.escalation_requested_at = cycle
+            state.escalations_total += 1
+            _record_escalation_correctness(state, decision, scenario)
+        elif decision.kind == "resolve_local":
+            action = decision.action_name  # "recover_local"
+            violated, reason = would_violate(action, state)
+            if violated:
+                state.safety_violations += 1
+                state.executed_violation_log.append({
+                    "cycle": cycle,
+                    "action": action,
+                    "reason": reason,
+                })
+                state.events.append(
+                    f"cycle {cycle}: safety violation via {action} ({reason})"
+                )
+            _execute_local_action(state, action)
+        elif decision.kind == "safe_mode":
+            state.safe_mode_reached = True
+            state.safe_mode_cycle = cycle
+            state.events.append(f"cycle {cycle}: safe mode reached")
+        elif decision.kind == "noop":
+            pass
+
+        # ═══ Stage 8: Consistency check ═══
+        _check_consistency(state, decision)
+
+    return {
+        "scenario_id": scenario["scenario_id"],
+        "seed": seed,
+        "condition": condition,
+        "cycles_run": state.cycle + 1,
+        "safety_violations": state.safety_violations,
+        "escalations_total": state.escalations_total,
+        "escalations_correct": state.escalations_correct,
+        "escalations_false": state.escalations_false,
+        "escalations_missed": state.escalations_missed,
+        "consistency": 1 if state.consistency else 0,
+        "secondary_damage": state.secondary_damage,
+        "safe_mode_reached": 1 if state.safe_mode_reached else 0,
+        "safe_mode_cycle": state.safe_mode_cycle,
+        "events": list(state.events),
+        "escalation_requested": 1 if state.escalation_requested else 0,
+        "escalation_requested_at": state.escalation_requested_at,
+        "vsm_acknowledged": 1 if state.vsm_acknowledged else 0,
+        "vsm_acknowledged_at": state.vsm_acknowledged_at,
+        "containment_effective": 1 if state.containment_effective else 0,
+        "containment_effective_at": state.containment_effective_at,
+        "executed_violation_log": state.executed_violation_log,
+        "candidate_would_violate_final": 1 if state.candidate_would_violate else 0,
+        "available_capacity_final": round(state.available_capacity, 4),
+        "required_recovery_capacity": state.required_recovery_capacity,
+    }

@@ -1,0 +1,13 @@
+# Addendum 001 — SHAs of files written after freeze.
+# Does NOT replace results/.preregistration.sha256.
+# Date: 2026-11-27
+# Updated: 2026-11-28 (TLA+ corrections applied, Addendum 001 §3.4)
+# Updated: 2026-11-28 (properties.tla rewritten — BoundedEscalation removed)
+
+f77c08651664817a4e81e4b0c07116479a434238471a61994e65435dfdbfab26  docs/ADDENDUM_001_2026-11-27.md
+52373f7d50132de4a18f4d093944d1d7ef2ee9e2cba50575de2d7a03f44b8177  formal/model_check.sh
+5811c63cb1c14b0010fa3769092b7e32dfff379361c00fdc5c53fa845e9c8aa2  formal/model_check_full.sh
+39c265d85ac4c7aaddf9244a7cdcb6dca343a0d12368a5c002eddda95cce82f8  formal/properties.tla
+85fa2e634eb8ba737c40ab4c392ea142ecafea6619f8fac2e3228ec68b0d5104  formal/GatewayPhase2.tla
+da20819d312c9e491acbf95a7b86343ec8b6eddadfec030dafda048b8c61dc20  formal/GatewayPhase2.cfg
+69ca063cfbd8eaa1de9107f02539e89eaca2d689e0491bed7ef338ef3c07834b  formal/legacy/2026-11-27_pre_addendum/SHA256SUMS.txt

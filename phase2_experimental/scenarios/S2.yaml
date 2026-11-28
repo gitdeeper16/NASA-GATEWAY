@@ -1,0 +1,41 @@
+# Phase II — Scenario S2
+# Immutable header
+scenario_id: S2
+version: "1.0"
+frozen_at: "2026-11-27"
+preregistration_ref: "PREREGISTRATION.md#4"
+hypotheses_ref: ["H1", "H2"]
+
+description: >
+  A shared resource reachable from the MSM fails at cycle 2, with severity
+  high enough that local containment is not possible. The MSM must escalate
+  to the VSM (R2). The VSM then acts on the shared resource. This is the
+  scenario that exercises H2: if escalation is early enough, secondary
+  damage to other components sharing the resource is reduced.
+
+initial_state:
+  components: 4
+  shared_resources: 2
+  vsm_authority: "nominal"
+  comm_channel: "up"
+
+fault_injection:
+  type: shared_resource_failure
+  target: "SR1"
+  at_cycle: 2
+  severity: 0.8
+  repeat: 0
+  persist_until: 12
+
+expected_rule: R2
+treatment_property: "[] (shared_resource_affected -> <> escalated)"
+control_rule: R2_control
+
+# The control threshold (2) is deliberately looser than the treatment
+# derivation. The scenario can therefore show either that treatment escalates
+# sooner (H2 supported) or that it does not (H2 falsified).
+can_fail_how:
+  - "FM-1: R2 fires, but too late — secondary damage to C3 and C4 is already done before the VSM acts. The reduction in secondary damage is below the pre-registered threshold. H2 falsified."
+  - "FM-2: R2 fires correctly, but the VSM does not have the shared-resource authority to act, so a correct escalation occurs with no reduction in secondary damage."
+  - "FM-3: The control (R2_control, threshold 2) fires earlier than R2 for some seeds, so treatment is worse than control — the H1 effect is reversed in S2. This is possible by design and is what makes H1 falsifiable."
+  - "FM-4: R2 fires, VSM acts, but MSM and VSM disagree about which resource is authoritative for the next cycle. Consistency is broken in a scenario that should not break it."

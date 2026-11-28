@@ -1,0 +1,50 @@
+============================= test session starts ==============================
+platform android -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- /data/data/com.termux/files/usr/bin/python
+cachedir: .pytest_cache
+rootdir: /storage/emulated/0/Download/NASA-GATEWAY/phase2bis_experimental
+plugins: cov-7.1.0, anyio-4.14.1
+collecting ... collected 31 items
+
+tests/test_design_integrity.py::test_7_seed_separation pilot=20, confirm=80, overlap=0
+PASSED
+tests/test_design_integrity.py::test_1_existence_of_violations test_1: OK (S3+S4 violations, S1 clean)
+PASSED
+tests/test_design_integrity.py::test_3_separation_candidate_vs_executed test_3: OK (separation observed)
+PASSED
+tests/test_design_integrity.py::test_6_determinism test_6: OK
+PASSED
+tests/test_design_integrity.py::test_4_H1_effect   S3: treatment better in 0/5 seeds
+  WARNING: S3 shows no H1 effect at all
+  S4: treatment better in 0/5 seeds
+  WARNING: S4 shows no H1 effect at all
+PASSED
+tests/test_design_integrity.py::test_5_H2_effect   S2: mean secondary_damage control=0.00, treatment=0.00
+  WARNING: H2 direction not observed (treatment >= control)
+PASSED
+tests/test_unit_backward_compat.py::test_single_fault_s1 PASSED
+tests/test_unit_backward_compat.py::test_single_fault_s2 PASSED
+tests/test_unit_backward_compat.py::test_single_fault_s4 PASSED
+tests/test_unit_backward_compat.py::test_multi_fault_s3 PASSED
+tests/test_unit_backward_compat.py::test_single_fault_shape_is_unchanged PASSED
+tests/test_unit_s3_transition.py::test_s3_initial_capacity PASSED
+tests/test_unit_s3_transition.py::test_s3_boundary_after_first_fault PASSED
+tests/test_unit_s3_transition.py::test_s3_overflow_after_second_fault PASSED
+tests/test_unit_s3_transition.py::test_s3_transition_is_due_to_second_fault PASSED
+tests/test_unit_s3_transition.py::test_s3_faults_are_at_distinct_cycles PASSED
+tests/test_unit_s3_transition.py::test_s3_faults_target_distinct_components PASSED
+tests/test_unit_violations.py::test_authority_no_violation_when_delegated PASSED
+tests/test_unit_violations.py::test_authority_violation_when_not_delegated PASSED
+tests/test_unit_violations.py::test_authority_independent_of_vsm_authority PASSED
+tests/test_unit_violations.py::test_shared_resource_no_violation_when_healthy PASSED
+tests/test_unit_violations.py::test_shared_resource_violation_when_unhealthy PASSED
+tests/test_unit_violations.py::test_active_constraint_no_violation_when_false PASSED
+tests/test_unit_violations.py::test_active_constraint_violation_when_true PASSED
+tests/test_unit_violations.py::test_capacity_no_violation_when_sufficient PASSED
+tests/test_unit_violations.py::test_capacity_violation_when_insufficient PASSED
+tests/test_unit_violations.py::test_capacity_boundary_equal PASSED
+tests/test_unit_violations.py::test_priority_authority_first PASSED
+tests/test_unit_violations.py::test_priority_shared_before_constraint PASSED
+tests/test_unit_violations.py::test_priority_constraint_before_capacity PASSED
+tests/test_unit_violations.py::test_non_local_actions_never_violate PASSED
+
+============================== 31 passed in 0.30s ==============================

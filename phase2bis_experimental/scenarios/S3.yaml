@@ -1,0 +1,50 @@
+# Phase II-bis — Scenario S3 (H1: capacity_overflow violation)
+scenario_id: S3
+version: "1.0-bis"
+date: "2026-11-28"
+hypotheses_ref: ["H1"]
+
+description: >
+  Sequential degradation of two components. C2 fails at cycle 3, C1 at
+  cycle 5. Both fail with severity 0.7.
+
+  Capacity accounting (3 components, each capacity 1.0):
+    before cycle 3:      available=3.0, required=2.0 -> no violation
+    cycle 3 (C2 fails):  available=2.0, required=2.0 -> boundary, NO violation
+    cycle 5 (C1 fails):  available=1.0, required=2.0 -> capacity_overflow=True
+
+  required_recovery_capacity is DERIVED, not arbitrary:
+    required = required_full_components * capacity_per_component
+             = 2 * 1.0
+             = 2.0
+  where required_full_components=2 is declared explicitly in this YAML
+  as the operational requirement (a full local recovery needs two
+  healthy components' worth of capacity). capacity_per_component is
+  the Component() default of 1.0.
+
+  The transition boundary->overflow at cycle 5 (after the SECOND fault)
+  is the target event. The test suite verifies the transition itself,
+  not merely the presence of two faults in the event log.
+
+initial_state:
+  components: 3
+  shared_resources: 0
+  vsm_authority: "nominal"
+  msm_authority_delegated: true
+  comm_channel: "up"
+
+recovery:
+  required_full_components: 2   # derived -> 2.0 in _build_initial_state
+
+fault_injection:
+  faults:
+    - type: local_recovery_failure
+      target: "C2"
+      at_cycle: 3
+      severity: 0.7
+    - type: local_recovery_failure
+      target: "C1"
+      at_cycle: 5
+      severity: 0.7
+
+expected_rule: R3

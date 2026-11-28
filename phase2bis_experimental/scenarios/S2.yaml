@@ -1,0 +1,59 @@
+# Phase II-bis — Scenario S2 (H2: escalation → containment → less secondary damage)
+scenario_id: S2
+version: "1.0-bis"
+date: "2026-11-28"
+hypotheses_ref: ["H2"]
+
+description: >
+  A shared resource reachable from the MSM fails at cycle 2, severity 0.8.
+  Local containment is not possible (shared resource unhealthy). The MSM must
+  escalate to the VSM (R2). VSM acknowledges in N+1 and attempts containment.
+  If containment succeeds, secondary propagation stops.
+
+  This scenario tests H2:
+  - treatment: R2 fires immediately → escalation requested cycle 2
+    → VSM acknowledges cycle 3 → containment attempts cycle 3
+    → secondary propagation stops from cycle 3
+  - control: R2c fires immediately too (structurally equivalent), so both
+    conditions escalate in cycle 2. The difference, if any, must come from
+    threshold or timing differences, not from the rule trigger.
+
+  NOTE (H2 scope): S2 does NOT test H1-bis. It does NOT attempt to
+  produce a candidate_would_violate = True. The absence of a local
+  candidate action in S2 is intentional: after a shared resource fails,
+  the only correct MSM response is escalation (R2). S2 tests the
+  containment chain and secondary damage, not local decision safety.
+
+  If the design wants a local candidate in S2, that would be a different
+  scenario (S2b) and must be declared explicitly. It is not added here.
+
+  NOTE (rules): R2 and R2c are structurally equivalent (both trigger on
+  shared_resource_unhealthy). The H2 effect is expected to come from
+  the *containment chain* timing, not from escalation threshold.
+  If treatment and control escalate at the same cycle, H2 may not show
+  an effect in S2 under current rules. This is recorded in
+  SPECIFICATION.md §7 as a known limitation.
+
+initial_state:
+  components: 4
+  shared_resources: 2
+  vsm_authority: "delegated"
+  msm_authority_delegated: true
+  comm_channel: "up"
+
+recovery:
+  required_capacity: 0.5
+
+fault_injection:
+  type: shared_resource_failure
+  target: "SR1"
+  at_cycle: 2
+  severity: 0.8
+  persist_until: 12
+
+expected_rule: R2
+
+can_fail_how:
+  - "FM-1: R2 fires, but containment fails (vsm_authority not delegated, or capacity insufficient)."
+  - "FM-2: containment succeeds but after secondary damage already done."
+  - "FM-3: treatment and control escalate at the same cycle → no H2 effect."

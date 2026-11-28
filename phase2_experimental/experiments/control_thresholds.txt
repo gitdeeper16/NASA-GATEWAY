@@ -1,0 +1,26 @@
+# Phase II — Control condition thresholds
+# Fixed at freeze 2026-11-27. NOT derived from safety constraints.
+# Structurally equivalent to R1–R5 but thresholds chosen independently.
+#
+# Rationale: the control must isolate "derivation from safety" from
+# "having escalation rules at all". Thresholds are therefore drawn from
+# a seeded uniform distribution over the same numerical range as the
+# treatment thresholds, with no reference to any hazard or constraint.
+#
+# Seed used to draw control thresholds: 20261129
+# Range: [1, 10] cycles (same range as treatment N in R3)
+#
+# R1_control (parallel to R1): escalate if local_fault_count >= 3
+# R2_control (parallel to R2): escalate if shared_resource_count >= 2
+# R3_control (parallel to R3): escalate if local_recovery_failures >= 5
+# R4_control (parallel to R4): escalate if local_action_count >= 4
+# R5_control (parallel to R5): escalate if comm_silence_cycles >= 3
+#
+# These thresholds are arbitrary. That is the point: they are fixed,
+# documented, and not traceable to any safety constraint.
+
+R1_control_threshold = 3
+R2_control_threshold = 2
+R3_control_threshold = 5
+R4_control_threshold = 4
+R5_control_threshold = 3

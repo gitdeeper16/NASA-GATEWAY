@@ -1,0 +1,25 @@
+============================= test session starts ==============================
+platform android -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- /data/data/com.termux/files/usr/bin/python
+cachedir: .pytest_cache
+rootdir: /storage/emulated/0/Download/NASA-GATEWAY/phase2bis_experimental
+plugins: cov-7.1.0, anyio-4.14.1
+collecting ... collected 6 items
+
+tests/test_design_integrity.py::test_7_seed_separation pilot=20, confirm=80, overlap=0
+PASSED
+tests/test_design_integrity.py::test_1_existence_of_violations test_1: OK (S3+S4 violations, S1 clean)
+PASSED
+tests/test_design_integrity.py::test_3_separation_candidate_vs_executed test_3: OK (separation observed)
+PASSED
+tests/test_design_integrity.py::test_6_determinism test_6: OK
+PASSED
+tests/test_design_integrity.py::test_4_H1_effect   S3: treatment better in 0/5 seeds
+  WARNING: S3 shows no H1 effect at all
+  S4: treatment better in 0/5 seeds
+  WARNING: S4 shows no H1 effect at all
+PASSED
+tests/test_design_integrity.py::test_5_H2_effect   S2: mean secondary_damage control=0.00, treatment=0.00
+  WARNING: H2 direction not observed (treatment >= control)
+PASSED
+
+============================== 6 passed in 0.24s ===============================

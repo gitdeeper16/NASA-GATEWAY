@@ -1,0 +1,14 @@
+# Pilot results — SHA-256 of each JSONL file
+# Produced by experiments/run_pilot.py on 2026-11-28
+# DESCRIPTIVE ONLY — not for hypothesis testing (H1–H4).
+
+2fb9e3524c71ab2114f0a5e44302a4a7d5023ffb83f08d1492bd73f5b8602ad4  results/pilot/S1_control.jsonl
+70d2a4f28a20d383dbc5f8910c75a1f804a64a9eb1c61e61ef637db68d80f8e5  results/pilot/S1_treatment.jsonl
+81013ae6fe9e5b6273bf7b9d8128eadb7697a737f9b02733fbd7488a7c1b05e2  results/pilot/S2_control.jsonl
+c2d3de36acd7461c37fdf350c7f86856f270b12964e01a70b63426cc77b999fe  results/pilot/S2_treatment.jsonl
+cffb62d59a4d8cb56bbf5d5c17427249573f097010e28af38c99670d038d0baf  results/pilot/S3_control.jsonl
+6eb6e3830714deac8bc8bac85b283ea00fdad7c0ac5d85e4a36853ad7056c8b7  results/pilot/S3_treatment.jsonl
+952e5149ab99866f4b9e49bab37aa880b7b5ae3db7384572f788926c1e84534a  results/pilot/S4_control.jsonl
+8aa45eb99071649255f5eecfb9640da96905bd59bb06c0e571e834c8cc3c1c27  results/pilot/S4_treatment.jsonl
+679e9df9a55b0252df3957e1d41367c8fa88c02222853367b0cd4a4a776fdafe  results/pilot/S5_control.jsonl
+66f9597e71ae368459b36ea150029a159f69b72ce00b4779b069a675259773fa  results/pilot/S5_treatment.jsonl

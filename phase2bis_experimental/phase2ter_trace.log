@@ -1,0 +1,780 @@
+
+========================================================================================================================
+S1 | condition=treatment | seed=382857
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=382857 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S1 | condition=treatment | seed=1203392
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=1203392 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S1 | condition=treatment | seed=1344673
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=1344673 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S1 | condition=treatment | seed=2149014
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=2149014 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S1 | condition=treatment | seed=2273391
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=2273391 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S1 | condition=control | seed=382857
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=382857 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S1 | condition=control | seed=1203392
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=1203392 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S1 | condition=control | seed=1344673
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=1344673 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S1 | condition=control | seed=2149014
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=2149014 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S1 | condition=control | seed=2273391
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=2273391 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S2 | condition=treatment | seed=382857
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=382857 cond=treatment: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S2 | condition=treatment | seed=1203392
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=1203392 cond=treatment: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S2 | condition=treatment | seed=1344673
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=1344673 cond=treatment: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S2 | condition=treatment | seed=2149014
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=2149014 cond=treatment: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S2 | condition=treatment | seed=2273391
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=2273391 cond=treatment: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S2 | condition=control | seed=382857
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=382857 cond=control: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S2 | condition=control | seed=1203392
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=1203392 cond=control: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S2 | condition=control | seed=1344673
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=1344673 cond=control: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S2 | condition=control | seed=2149014
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=2149014 cond=control: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S2 | condition=control | seed=2273391
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=True ack=False contain=False dec=escalate
+cyc=  3 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  4 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  5 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  6 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  7 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  8 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc=  9 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 10 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 11 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 12 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 13 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 14 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 15 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 16 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 17 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 18 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+cyc= 19 C1=1 C2=1 esc=True ack=True contain=True dec=escalate
+
+Final seed=2273391 cond=control: attempts=0 failures=0 guard=0 sv=0 esc=18 cand=0
+
+========================================================================================================================
+S5 | condition=treatment | seed=382857
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=382857 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S5 | condition=treatment | seed=1203392
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=1203392 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S5 | condition=treatment | seed=1344673
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=1344673 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S5 | condition=treatment | seed=2149014
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=2149014 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S5 | condition=treatment | seed=2273391
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=2273391 cond=treatment: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S5 | condition=control | seed=382857
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=382857 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S5 | condition=control | seed=1203392
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=1203392 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S5 | condition=control | seed=1344673
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=1344673 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S5 | condition=control | seed=2149014
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=2149014 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0
+
+========================================================================================================================
+S5 | condition=control | seed=2273391
+========================================================================================================================
+cyc=  0 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  1 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  2 C1=1 C2=1 esc=False ack=False contain=False dec=noop
+cyc=  3 C1=1 C2=0 esc=False ack=False contain=False dec=resolve_local
+cyc=  4 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  5 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  6 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  7 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  8 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc=  9 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 10 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 11 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 12 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 13 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 14 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 15 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 16 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 17 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 18 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+cyc= 19 C1=1 C2=0 esc=False ack=False contain=False dec=noop
+
+Final seed=2273391 cond=control: attempts=1 failures=0 guard=0 sv=0 esc=0 cand=0

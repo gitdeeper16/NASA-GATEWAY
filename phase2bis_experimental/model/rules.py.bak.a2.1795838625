@@ -1,0 +1,129 @@
+"""Escalation rules for Phase II-bis.
+
+Treatment rules (R1-R5) are derived from safety constraints.
+Control rules (R1c-R5c) are structurally equivalent but use looser thresholds.
+"""
+from __future__ import annotations
+
+from model.state import RuleView
+
+
+# Control thresholds — looser than treatment (which is structural).
+CONTROL_THRESHOLDS = {
+    # ─── Unified with treatment (H1-bis isolation, 2026-11-28) ───
+    # Control and treatment must face identical rule-activation conditions,
+    # so that the only behavioral difference between them is the treatment
+    # guard (would_violate evaluation before execution). See SPECIFICATION.md.
+    "R1c": 1,   # unified with treatment R1_local_containable
+    "R3c": 2,   # unified with treatment R3_local_recovery_failed
+    "R4c": 1,   # already equal to treatment R4_constraint_conflict
+    "R5c": 2,   # already equal to treatment R5_comm_lost
+    # ─── UNUSED: retained for historical traceability ───
+    # R2_control does not read this threshold (both R2 and R2c return
+    # view.shared_resource_unhealthy). Kept at 20 to avoid a cleanup diff
+    # in this cycle. See SPECIFICATION.md Appendix.
+    "R2c": 20,  # UNUSED: retained for historical traceability; see SPECIFICATION.md
+}
+
+
+# ─── Treatment rules (R1-R5) ───
+
+def R1_local_containable(view: RuleView) -> bool:
+    """R1: local fault is containable. Do NOT escalate; resolve locally."""
+    return view.local_containable and view.local_fault_count >= 1
+
+
+def R2_shared_resource(view: RuleView) -> bool:
+    """R2: shared resource affected. Escalate to VSM."""
+    return view.shared_resource_unhealthy
+
+
+def R3_local_recovery_failed(view: RuleView) -> bool:
+    """R3: local recovery has failed repeatedly. Escalate."""
+    return view.local_recovery_failures >= 2
+
+
+def R4_constraint_conflict(view: RuleView) -> bool:
+    """R4: an active constraint conflicts with local action. Escalate."""
+    return view.constraint_conflict
+
+
+def R5_comm_lost(view: RuleView) -> bool:
+    """R5: communication lost. Enter safe mode."""
+    return view.comm_silence_cycles >= 1
+
+
+TREATMENT_RULES = {
+    "R1": R1_local_containable,
+    "R2": R2_shared_resource,
+    "R3": R3_local_recovery_failed,
+    "R4": R4_constraint_conflict,
+    "R5": R5_comm_lost,
+}
+
+RULE_POLARITY = {
+    "R1": "resolve_local",
+    "R2": "escalate",
+    "R3": "escalate",
+    "R4": "escalate",
+    "R5": "safe_mode",
+}
+
+
+# ─── Control rules (R1c-R5c) — structurally equivalent, looser thresholds ───
+
+def R1_control(view: RuleView) -> bool:
+    """R1c: unified with R1_local_containable (2026-11-28).
+
+    Control must face the SAME candidate-evaluation context as treatment.
+    The only difference between the two conditions is the treatment guard
+    (would_violate check before execution), applied in _choose_decision.
+    """
+    return (
+        view.local_containable
+        and view.local_fault_count >= CONTROL_THRESHOLDS["R1c"]
+    )
+
+
+def R2_control(view: RuleView) -> bool:
+    return view.shared_resource_unhealthy  # same as R2 (structural)
+
+
+def R3_control(view: RuleView) -> bool:
+    """R3c: same condition as R3_local_recovery_failed (unified 2026-11-28).
+
+    Both conditions trigger on the same threshold value (R3c=2 and the
+    hardcoded >= 2 in R3_local_recovery_failed). Documented here for
+    symmetry; no behavioral difference.
+    """
+    return view.local_recovery_failures >= CONTROL_THRESHOLDS["R3c"]
+
+
+def R4_control(view: RuleView) -> bool:
+    """R4_control: escalate only after N cycles of constraint conflict.
+    Structurally equivalent to R4 but with a debounce threshold."""
+    return (
+        view.constraint_conflict
+        and view.cycle >= CONTROL_THRESHOLDS["R4c"]
+    )
+
+
+def R5_control(view: RuleView) -> bool:
+    return view.comm_silence_cycles >= CONTROL_THRESHOLDS["R5c"]
+
+
+CONTROL_RULES = {
+    "R1c": R1_control,
+    "R2c": R2_control,
+    "R3c": R3_control,
+    "R4c": R4_control,
+    "R5c": R5_control,
+}
+
+CONTROL_POLARITY = {
+    "R1c": "resolve_local",
+    "R2c": "escalate",
+    "R3c": "escalate",
+    "R4c": "escalate",
+    "R5c": "safe_mode",
+}

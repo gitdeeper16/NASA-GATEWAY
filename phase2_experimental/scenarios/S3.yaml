@@ -1,0 +1,42 @@
+# Phase II — Scenario S3
+# Immutable header
+scenario_id: S3
+version: "1.0"
+frozen_at: "2026-11-27"
+preregistration_ref: "PREREGISTRATION.md#4"
+hypotheses_ref: ["H1"]
+
+description: >
+  A component fails repeatedly. Local recovery is attempted each time and
+  fails each time. After N repeated failures (N fixed by R3 in
+  HYPOTHESES.md), the MSM must escalate. The scenario exercises whether R3
+  fires at the right point, and whether the bound N chosen in the rule
+  catalogue is the right bound — if it is too large, secondary damage
+  accumulates; if too small, escalation is premature.
+
+initial_state:
+  components: 3
+  shared_resources: 1
+  vsm_authority: "nominal"
+  comm_channel: "up"
+
+fault_injection:
+  type: local_recovery_failure
+  target: "C1"
+  at_cycle: 1
+  severity: 0.5
+  repeat: 5
+  persist_until: 18
+
+expected_rule: R3
+treatment_property: "[] (local_recovery_failed -> <> escalated)"
+control_rule: R3_control
+
+# The control threshold (5) is arbitrary. The treatment N (fixed in
+# HYPOTHESES.md) must be the same order of magnitude, otherwise the
+# comparison is between "some escalation" and "almost none".
+can_fail_how:
+  - "FM-1: R3 fires at N=5 (the frozen bound), but the repeated failure has already caused at least one safety violation on C1 by cycle 4. H1 falsified in S3."
+  - "FM-2: R3 fires at N=5, but the control (R3_control=5) fires at the same cycle, so the H1 effect in S3 is zero. This is a pre-registered possibility and counts against H1 as a whole if the other scenarios do not compensate."
+  - "FM-3: R3 never fires because the local recovery failure is never observed — the model's recovery mechanism masks the failures. This is a model bug that H1 would not detect, but the determinism check and the TLA+ model of R3 should."
+  - "FM-4: R3 fires, but the VSM's response re-enables local recovery, resetting the failure count and creating a loop. The time to resolution exceeds the frozen bound; the model misbehaves in a way H2 and H3 do not catch."

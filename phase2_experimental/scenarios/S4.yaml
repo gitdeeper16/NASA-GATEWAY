@@ -1,0 +1,42 @@
+# Phase II — Scenario S4
+# Immutable header
+scenario_id: S4
+version: "1.0"
+frozen_at: "2026-11-27"
+preregistration_ref: "PREREGISTRATION.md#4"
+hypotheses_ref: ["H1", "H3"]
+
+description: >
+  A condition arises in which the locally optimal MSM action would violate
+  a vehicle-level safety constraint (e.g. the local action would exceed a
+  thermal or power budget). The MSM must not take the local action (R4) and
+  must instead defer to the VSM. This scenario is the one where the local
+  decision and the safety constraint are in direct conflict, so it is the
+  sharpest test of whether derivation from safety matters.
+
+initial_state:
+  components: 3
+  shared_resources: 1
+  vsm_authority: "nominal"
+  comm_channel: "up"
+
+fault_injection:
+  type: constraint_conflict
+  target: "C1"
+  at_cycle: 4
+  severity: 0.7
+  repeat: 0
+  persist_until: 15
+
+expected_rule: R4
+treatment_property: "[] (conflict -> ~local_action)"
+control_rule: R4_control
+
+# The control threshold (4) is arbitrary. The treatment rule is
+# "never take a local action that violates a vehicle-level constraint" —
+# a categorical rule, not a threshold.
+can_fail_how:
+  - "FM-1: R4 fires, but the local action was already taken before the constraint check, so the run records at least one safety violation under treatment. H1 falsified in S4. This is the most likely failure mode if R4 is implemented as a post-hoc check instead of a pre-condition."
+  - "FM-2: R4 fires, no local action taken, but the MSM and VSM then disagree about the next action (MSM still has stale state). Consistency is broken in S4 — H3 fails, and S4 is a scenario where H3 is expected to hold."
+  - "FM-3: The control (R4_control, threshold 4) fires on a different cycle but with the same effect (no local action taken), so the H1 effect in S4 is zero. Again a pre-registered possibility."
+  - "FM-4: R4 fires, but the constraint itself is mis-specified in the model (e.g. thermal budget defined with the wrong sign), so the model believes there is no conflict. H5 would pass while H1 fails — exactly the case where H5 and H1 diverge, and why H5 is not evidence for H1."

@@ -1,0 +1,42 @@
+# Phase II — Scenario S1
+# Immutable header
+scenario_id: S1
+version: "1.0"
+frozen_at: "2026-11-27"
+preregistration_ref: "PREREGISTRATION.md#4"
+hypotheses_ref: ["H1", "H3"]
+
+description: >
+  A single component under MSM control fails at cycle 3. The failure is
+  fully containable within the MSM domain: no shared resource is touched,
+  the VSM does not need to act, and local recovery (R1) is expected to
+  resolve the fault. This is the case where the treatment should NOT
+  escalate, and where escalating would itself be a defect (a false
+  escalation).
+
+initial_state:
+  components: 3
+  shared_resources: 0
+  vsm_authority: "nominal"
+  comm_channel: "up"
+
+fault_injection:
+  type: component_failure
+  target: "C2"
+  at_cycle: 3
+  severity: 0.6
+  repeat: 0
+  persist_until: 8
+
+expected_rule: R1
+treatment_property: "[] (local_containable -> <> resolved_locally)"
+control_rule: R1_control
+
+# This scenario is the case where a naive "always escalate" strategy would
+# produce false escalations and break MSM–VSM agreement. R1 must fire, and the
+# control (R1_control, threshold 3) must NOT fire on a single failure.
+can_fail_how:
+  - "FM-1: R1 fails to fire because the containability predicate is mis-specified (e.g. treats any component failure as non-containable). The local fault is left unresolved, and the run records at least one safety violation. H1 reversed."
+  - "FM-2: R1 fires but the control also fires (R1_control threshold too low relative to treatment), producing a false escalation under treatment and no detectable H1 effect."
+  - "FM-3: R1 fires and resolves locally, but the escalation state is not cleared, so the VSM still believes it has authority. MSM and VSM disagree — H3 fails in a scenario where it is expected to hold."
+  - "FM-4: local recovery succeeds but the time to resolution exceeds the frozen bound, showing that R1 is correct in direction but wrong in timing — a direction the design records descriptively."

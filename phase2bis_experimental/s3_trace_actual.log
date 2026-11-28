@@ -1,0 +1,56 @@
+
+====================================================================================================
+S3 | condition=treatment | seed=1
+====================================================================================================
+cyc |  C1  C2  C3 | avail  req | cand exec_v |           pend | att fail guard  sv | decision
+-------------------------------------------------------------------------------------------------------------------
+  0 |   H   H   H |  3.00  2.0 |    0      - |              - |   0    0     0   0 | noop
+  1 |   H   H   H |  3.00  2.0 |    0      - |              - |   0    0     0   0 | noop
+  2 |   H   H   H |  3.00  2.0 |    0      - |              - |   0    0     0   0 | noop
+  3 |   H   U   H |  2.00  2.0 |    0      - |  recover_local |   0    1     0   0 | resolve_local/R1
+  4 |   H   U   H |  2.00  2.0 |    0      - |              - |   1    1     0   0 | noop
+  5 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+  6 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+  7 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+  8 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+  9 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 10 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 11 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 12 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 13 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 14 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 15 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 16 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 17 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 18 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+ 19 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3
+
+Final: attempts=1 failures=2 guard=0 safety_violations=0 escalations_total=15 candidate_violations_count=15 candidate_would_violate_final=1
+
+====================================================================================================
+S3 | condition=control | seed=1
+====================================================================================================
+cyc |  C1  C2  C3 | avail  req | cand exec_v |           pend | att fail guard  sv | decision
+-------------------------------------------------------------------------------------------------------------------
+  0 |   H   H   H |  3.00  2.0 |    0      - |              - |   0    0     0   0 | noop
+  1 |   H   H   H |  3.00  2.0 |    0      - |              - |   0    0     0   0 | noop
+  2 |   H   H   H |  3.00  2.0 |    0      - |              - |   0    0     0   0 | noop
+  3 |   H   U   H |  2.00  2.0 |    0      - |  recover_local |   0    1     0   0 | resolve_local/R1c
+  4 |   H   U   H |  2.00  2.0 |    0      - |              - |   1    1     0   0 | noop
+  5 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+  6 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+  7 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+  8 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+  9 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 10 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 11 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 12 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 13 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 14 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 15 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 16 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 17 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 18 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+ 19 |   U   U   H |  1.00  2.0 |    1      - |  recover_local |   1    2     0   0 | escalate/R3c
+
+Final: attempts=1 failures=2 guard=0 safety_violations=0 escalations_total=15 candidate_violations_count=15 candidate_would_violate_final=1

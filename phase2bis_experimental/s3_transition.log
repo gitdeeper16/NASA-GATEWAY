@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform android -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- /data/data/com.termux/files/usr/bin/python
+cachedir: .pytest_cache
+rootdir: /storage/emulated/0/Download/NASA-GATEWAY/phase2bis_experimental
+plugins: cov-7.1.0, anyio-4.14.1
+collecting ... collected 6 items
+
+tests/test_unit_s3_transition.py::test_s3_initial_capacity PASSED
+tests/test_unit_s3_transition.py::test_s3_boundary_after_first_fault PASSED
+tests/test_unit_s3_transition.py::test_s3_overflow_after_second_fault PASSED
+tests/test_unit_s3_transition.py::test_s3_transition_is_due_to_second_fault PASSED
+tests/test_unit_s3_transition.py::test_s3_faults_are_at_distinct_cycles PASSED
+tests/test_unit_s3_transition.py::test_s3_faults_target_distinct_components PASSED
+
+============================== 6 passed in 0.14s ===============================
